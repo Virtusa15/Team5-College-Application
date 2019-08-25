@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Admin {
 	private String name;
 	@Id
-	private long aid;
+	private String aid;
 	private String password;
 	public String getName() {
 		return name;
@@ -15,10 +15,10 @@ public class Admin {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getAid() {
+	public String getAid() {
 		return aid;
 	}
-	public void setAid(long aid) {
+	public void setAid(String aid) {
 		this.aid = aid;
 	}
 	public String getPassword() {
@@ -27,7 +27,7 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Admin(String name, long aid, String password) {
+	public Admin(String name, String aid, String password) {
 		super();
 		this.name = name;
 		this.aid = aid;
@@ -37,6 +37,10 @@ public class Admin {
 	public String toString() {
 		return "Admin [name=" + name + ", aid=" + aid + ", password=" + password + "]";
 	}
+	public Admin() {
+		super();
+	}
+	
 	
 	
 	

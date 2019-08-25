@@ -16,17 +16,18 @@
   	<description></description>
   	<servlet-class>com.college.web.controller.KeyController</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>AdminLoginController</servlet-name>
-  	<display-name>AdminLoginController</display-name>
-  	<description></description>
-  	<servlet-class>com.college.web.controller.AdminLoginController</servlet-class>
-  </servlet>
+ 
   <servlet>
   	<servlet-name>AdminRegController</servlet-name>
   	<display-name>AdminRegController</display-name>
   	<description></description>
   	<servlet-class>com.college.web.controller.AdminRegController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminLoginController</servlet-name>
+  	<display-name>AdminLoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.college.web.controller.AdminLoginController</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -37,13 +38,14 @@
   	<servlet-name>KeyController</servlet-name>
   	<url-pattern>/keycont</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>AdminLoginController</servlet-name>
-  	<url-pattern>/AdminLoginController</url-pattern>
-  </servlet-mapping>
+ 
   <servlet-mapping>
   	<servlet-name>AdminRegController</servlet-name>
   	<url-pattern>/AdminRegController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminLoginController</servlet-name>
+  	<url-pattern>/AdminLoginController</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

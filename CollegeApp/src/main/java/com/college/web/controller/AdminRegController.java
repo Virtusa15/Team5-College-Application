@@ -31,7 +31,7 @@ public class AdminRegController extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		
 		String fname=request.getParameter("name");
-		long aid=Long.parseLong(request.getParameter("aid"));
+		String aid=request.getParameter("aid");
 		String pass=request.getParameter("pass");
 		
 		Admin admin=new Admin(fname,aid,pass);
