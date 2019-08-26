@@ -29,6 +29,12 @@
   	<description></description>
   	<servlet-class>com.college.web.controller.AdminLoginController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AdminLogoutController</servlet-name>
+  	<display-name>AdminLogoutController</display-name>
+  	<description></description>
+  	<servlet-class>com.college.web.controller.AdminLogoutController</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>ApplicantController</servlet-name>
@@ -46,6 +52,10 @@
   <servlet-mapping>
   	<servlet-name>AdminLoginController</servlet-name>
   	<url-pattern>/AdminLoginController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminLogoutController</servlet-name>
+  	<url-pattern>/</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
