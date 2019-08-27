@@ -33,6 +33,13 @@
     <artifactId>postgresql</artifactId>
     <version>8.2-504.jdbc4</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
 
   </dependencies>
   <build>

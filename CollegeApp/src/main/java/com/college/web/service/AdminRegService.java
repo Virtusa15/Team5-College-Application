@@ -1,5 +1,7 @@
 package com.college.web.service;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -35,7 +37,14 @@ public class AdminRegService {
 		
 		return true;
 		
+
+		
 	}
+	
+	
+
+	
+	
 
 	private boolean isAdminExists(Admin admin) {
 		// TODO Auto-generated method stub

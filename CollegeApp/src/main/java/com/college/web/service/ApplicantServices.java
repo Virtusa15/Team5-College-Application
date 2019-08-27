@@ -1,5 +1,8 @@
 package com.college.web.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -47,6 +50,34 @@ public class ApplicantServices {
 		
 		
 	}
+	
+	
+	public List<Applicant> getAllApplicants()
+	{
+		Session session=HibernateUtil.openSession();
+		Transaction tx = null;
+		List<Applicant>    applicant=null;
+		
+		 try {
+	         tx = session.getTransaction();
+	         tx.begin();
+	         applicant =session.createQuery("from Applicant").list();    
+	      
+	
+	         tx.commit();
+	     } catch (Exception e) {
+	         if (tx != null) {
+	             tx.rollback();
+	         }
+	         e.printStackTrace();
+	     } finally {
+	         session.close();
+	     } 
+		
+		return applicant ;
+		
+	}
+	
 
 	private boolean isUserExists(Applicant app) {
 		// TODO Auto-generated method stub

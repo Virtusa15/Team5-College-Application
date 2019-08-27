@@ -1,4 +1,4 @@
-package com.college.web.model;
+ package com.college.web.model;
 
 import java.util.Date;
 
@@ -146,6 +146,10 @@ public class Applicant {
 				+ ", Country=" + Country + ", percentage=" + percentage + ", Course=" + Course + ", Stream=" + Stream
 				+ "]";
 	}
+	public Applicant() {
+		super();
+	}
+	
 	
 	
 	
