@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.college.web.model.Applicant;
 import com.college.web.service.ApplicantServices;
@@ -41,7 +42,8 @@ public class ApplicantViewController extends HttpServlet {
 	 }
 	 else
 	 {
-		 request.setAttribute("dis",applicant);
+		HttpSession session=request.getSession();
+		session.setAttribute("dis", applicant);
 		 RequestDispatcher rd=request.getRequestDispatcher("/ApplicationsView.jsp");
 		 rd.forward(request, response);
 	 

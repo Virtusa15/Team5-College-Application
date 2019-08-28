@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.college.web.model.Admin;
+import com.college.web.model.ApplicationStatus;
 import com.college.web.util.HibernateUtil;
 
 public class AdminLoginService {
@@ -39,6 +40,37 @@ public class AdminLoginService {
 	            session.close();
 	        }
 	        return admin;
+	}
+
+	public boolean updateStatus(ApplicationStatus status) {
+		
+		 Session session = HibernateUtil.openSession();
+			
+			
+	  
+	     Transaction tx = null;
+	     try {
+	         tx = session.getTransaction();
+	         tx.begin();
+	         session.saveOrUpdate(status);       
+	         tx.commit();
+	     } 
+	     
+	     catch (Exception e) {
+	         if (tx != null) {
+	             tx.rollback();
+	         }
+	         e.printStackTrace();
+	     } 
+	    
+	     
+	     finally {
+	         session.close();
+	     } 
+		
+		
+		
+		return true;
 	}
 
 }

@@ -62,7 +62,11 @@ public class ApplicantController extends HttpServlet {
 		         out.println("<center>");
 		         if(result){
 		             out.println("<h1>Application Submitted Sucessfully :</h1>");
-		             out.println("To login with new UserId and Password<a href=login.jsp>Click here</a>");
+		             
+		             out.println("<h1>your application id:"+app.getApplication_id()+"</h1>");
+		             out.println("<h1>please keep this id for application status<h1>");
+		             
+		             out.println("To see the status of  application<a href=ApplicationStatus.jsp>Click here</a>");
 		         }else{
 		             out.println("<h1>Registration Failed</h1>");
 		             out.println("<h1>application already exist </h1>");

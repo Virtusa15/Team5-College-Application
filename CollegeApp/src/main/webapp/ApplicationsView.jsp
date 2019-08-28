@@ -2,7 +2,7 @@
 <%@page import="com.college.web.service.ApplicantServices"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ page import="com.college.*,java.util.*"%>
 <!DOCTYPE html>
@@ -46,23 +46,53 @@ li a {
 }
 
 li
+
+
  
+
+
 a
+
+
+
+
 :hover
+
+
+
+
 :not
+
+
  
+
+
 (
 .active
+
+
  
+
+
 )
 {
 background-color
+
+
+
+
 :
+
+
  
+
+
 #111
+
+
+
+
 ;
-
-
 }
 .active {
 	background-color: #4CAF50;
@@ -71,24 +101,35 @@ background-color
 
 </head>
 <body>
-	<%
-		List<Applicant> aa=(List<Applicant>)request.getAttribute("dis");
-		
-		
-		
+<% 
+	List<Applicant> aa = (List<Applicant>) session.getAttribute("dis");
+
+			//out.println(aa);;
+
 	%>
-	
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		if (session.getAttribute("user") == null)
+			response.sendRedirect("AdminLogin.jsp");
+
+	%>
+
 	<ul>
-		<li><a href="Adminhome.jsp"">AdminHome</a></li>
+		<li><a href="Adminhome.jsp">AdminHome</a></li>
 		<li><a href="#contact">Maintenance</a></li>
 		<li style="float: right"><a
 			href="<%=request.getContextPath()%>//AdminLogout">logout</a></li>
 	</ul>
+	<div class="jumbotron jumbotron-red">
+  <div class="container">
+   <h1><center>welcome  <%= session.getAttribute("user") %></center></h1> 
+  </div>
+</div>
 
 
 
 	<div style="top: 150px">
-		<table class="table table-dark" border="1"  >
+		<table class="table table-dark" border="1">
 			<thead>
 				<tr>
 					<th scope="col">application id</th>
@@ -101,27 +142,76 @@ background-color
 					<th scope="col">Stream</th>
 					<th scope="col">Approve</th>
 					<th scope="col">Reject</th>
-
-			
-				
+						</thead>
 			<tbody>
-			
-			<tr>
-			<td>
-		</td>
-			
-			
-			</tr>
-				
+				<%
+					for (Applicant dr : aa) {
+				%>
+
+				<tr>
+					<td><%=dr.getApplication_id()%></td>
+					<td><%=dr.getFirst_name()%></td>
+					<td><%=dr.getLast_name()%></td>
+					<td><%=dr.getEmail_id()%></td>
+					<td><%=dr.getMobile_no()%></td>
+					<td><%=dr.getPercentage()%></td>
+					<td><%=dr.getCourse()%></td>
+					<td><%=dr.getStream()%></td>
+					<td>
+						<form action="AcceptApplicationController" method="Post">
+
+							<input type="hidden" name="aid"
+								value="<%=dr.getApplication_id()%>"> <input
+								type="hidden" name="aname" value="<%=dr.getFirst_name()%>">
+							<input type="hidden" name="status" value="approve"> <input
+								type="submit" value="approve">
+
+
+
+
+
+						</form>
+
+
+
+
+
+					</td>
+
+					<td>
+						<form action="AcceptApplicationController" method="Post">
+
+							<input type="hidden" name="aid"
+								value="<%=dr.getApplication_id()%>"> <input
+								type="hidden" name="aname" value="<%=dr.getFirst_name()%>">
+							<input type="hidden" name="status" value="reject"> <input
+								type="submit" value="reject">
+
+
+						</form>
+					</td>
+
+
+
+
+
+
+
+
+				</tr>
+				<%
+					}
+				%>
+
 			</tbody>
-			</thead>
+		
 		</table>
 
 
 
 
 	</div>
-	<%= aa %>
+
 
 
 

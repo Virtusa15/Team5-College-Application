@@ -54,6 +54,7 @@ if(session.getAttribute("user")==null)
 	response.sendRedirect("AdminLogin.jsp");
 
 String user=(String)session.getAttribute("user");
+session.setAttribute("user", user);
 
 %>
 <ul>

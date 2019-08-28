@@ -36,7 +36,7 @@ public class ApplicantServices {
 	     } 
 	   
 		
-		
+	
 		
 		
 		
@@ -51,14 +51,15 @@ public class ApplicantServices {
 		
 	}
 	
-	
+
 	public List<Applicant> getAllApplicants()
 	{
+		
 		Session session=HibernateUtil.openSession();
 		Transaction tx = null;
 		List<Applicant>    applicant=null;
-		
 		 try {
+		
 	         tx = session.getTransaction();
 	         tx.begin();
 	         applicant =session.createQuery("from Applicant").list();    
