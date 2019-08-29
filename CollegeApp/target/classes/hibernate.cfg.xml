@@ -16,5 +16,6 @@
         <mapping class="com.college.web.model.Security" />
         <mapping class="com.college.web.model.Admin"/>
              <mapping class="com.college.web.model.ApplicationStatus"/>
+              <mapping class="com.college.web.model.Courses"/>
     </session-factory>
 </hibernate-configuration>

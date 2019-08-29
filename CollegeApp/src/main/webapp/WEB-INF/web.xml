@@ -47,6 +47,12 @@
   	<description></description>
   	<servlet-class>com.college.web.controller.ApplicationStatusControll</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ApplicationStatusCheck</servlet-name>
+  	<display-name>ApplicationStatusCheck</display-name>
+  	<description></description>
+  	<servlet-class>com.college.web.controller.ApplicationStatusCheck</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>ApplicantController</servlet-name>
@@ -76,6 +82,10 @@
   <servlet-mapping>
   	<servlet-name>ApplicationStatusControll</servlet-name>
   	<url-pattern>/AcceptApplicationController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApplicationStatusCheck</servlet-name>
+  	<url-pattern>/applicationstatuscheck</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

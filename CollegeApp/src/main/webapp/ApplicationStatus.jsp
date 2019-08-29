@@ -8,5 +8,22 @@
 </head>
 <body>
 
+<div align="center" style="top: 800%;" >
+<table>
+<tr>
+<form action="applicationstatuscheck" method="post">
+<td>ENTER YOUR APPLICATION ID:<input type="text" name="aid"></td><br>
+<td><input type="submit" value="checkStatus"></td>
+</tr>
+
+</form>
+
+
+
+</table>
+
+</div> 
+
+
 </body>
 </html>

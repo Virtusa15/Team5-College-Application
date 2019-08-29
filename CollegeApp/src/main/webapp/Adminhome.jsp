@@ -9,6 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 ul {
   list-style-type: none;
@@ -59,7 +61,14 @@ session.setAttribute("user", user);
 %>
 <ul>
   <li><a href="<%=request.getContextPath()%>//ApplicantViewController">Applicationsview</a></li>
-  <li><a href="#contact">Maintenance</a></li>
+  <li><a href="#contact">CourseAssign</a></li>
+  <li><a href="#contact">PlacementDetails</a></li>
+  <li><a href="#contact">PostEventts</a></li>
+  <li><a href="#contact">ViewStudetnts</a></li>
+  <li><a href="#contact">ViewFaculty</a></li>
+  
+  
+ 
   <li style="float:right"><a href="<%=request.getContextPath()%>//AdminLogout">logout</a></li>
 </ul>
 
@@ -69,6 +78,11 @@ session.setAttribute("user", user);
    <h1>welcome  <%= user %></h1> 
   </div>
 </div>
+
+
+
+
+
 
 
 </body>

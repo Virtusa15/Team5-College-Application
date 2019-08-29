@@ -39,6 +39,10 @@ public class ApplicationStatus {
 	public ApplicationStatus() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "ApplicationStatus [status=" + status + ", aid=" + aid + ", name=" + name + "]";
+	}
 	
 	
 	

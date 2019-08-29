@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.college.web.model.Applicant;
+import com.college.web.model.ApplicationStatus;
 import com.college.web.util.HibernateUtil;
 
 public class ApplicantServices {
@@ -103,6 +104,36 @@ public class ApplicantServices {
 	         session.close();
 	     }
 	     return result;
+	}
+
+
+	public ApplicationStatus getStatus(int aid) {
+		
+
+		Session session = HibernateUtil.openSession();
+	    // boolean result = true;
+		 ApplicationStatus u=null;
+	     Transaction tx = null;
+	     try{
+	         tx = session.getTransaction();
+	         tx.begin();
+	         Query query = session.createQuery("from ApplicationStatus where aid='"+aid+"'");
+	          u = (ApplicationStatus)query.uniqueResult();
+	         tx.commit();
+	       //  if(u==null) result = false;
+	        	 
+	     }catch(Exception ex){
+	         if(tx!=null){
+	             tx.rollback();
+	         }
+	     }finally{
+	         session.close();
+	     }
+	     return u;
+		
+		
+		
+	
 	}
 
 }

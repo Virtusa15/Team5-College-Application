@@ -1,10 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Student Registration Form</title>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="h2.css">
 
+
 </head>
- 
 <body>
 <h3>STUDENT REGISTRATION FORM</h3>
 
@@ -30,7 +34,7 @@
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td>DATE OF BIRTH</td>
-<td><input type="text" name="bday"/>
+<td><input type="date" name="bday" />
 (enter date in YYYY-MM-DD)
  </td>
 <td>
@@ -151,6 +155,6 @@ B.Tech
 </table>
  
 </form>
- 
+
 </body>
 </html>

@@ -2,6 +2,8 @@ package com.college.web.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -32,11 +34,14 @@ public class ApplicantController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		  response.setContentType("text/html;charset=UTF-8");
-		  
+		//  SimpleDateFormat for1= new SimpleDateFormat("dd/mm/yyyy");
 		  PrintWriter out=response.getWriter();
 		  String first_name=request.getParameter("First_Name");
 		  String last_name=request.getParameter("Last_Name");
 		 String Dob=request.getParameter("bday");
+	
+		
+		 
 		  String email_id=request.getParameter("Email_Id");
 		  long Mobile=Long.parseLong(request.getParameter("Mobile_Number"));
 		  String Gender=request.getParameter("Gender");
