@@ -7,15 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div align="center">
+<div  align="center">
 
 
 <h1>ADMIN LOGIN</h1>
 </div>
 
-<div align="center">
+<div >
 <form action="AdminLoginController" method="post">
-<table>
+<table align="center" cellpadding = "10">
 <tr>
 <td>Admin id:</td>
 <td><input type="text" name="aid"></td>
@@ -35,7 +35,6 @@
 <input type="reset" value="Reset">
 </td>
 </tr>
-
 
 
 
