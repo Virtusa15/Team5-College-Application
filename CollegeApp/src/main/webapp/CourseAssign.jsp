@@ -24,7 +24,7 @@
 <body>
 <center><h1>ADD COURSE</h1></center>
 <div class="boxed">
-<form action="updatecourse">
+<form action="updatecourse" method="post">
 <table align="center" cellpadding = "10" border="1">
 <tr>
 <td>COURSEID:</td>
@@ -40,7 +40,7 @@
 </tr>
 <tr>
 <td>TIME:</td>
-<td><input type="text" name="cid"></td>
+<td><input type="text" name="time"></td>
 </tr>
 
 <tr>

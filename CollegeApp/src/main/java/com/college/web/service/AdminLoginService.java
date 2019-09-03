@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 
 import com.college.web.model.Admin;
 import com.college.web.model.ApplicationStatus;
+import com.college.web.model.Courses;
 import com.college.web.util.HibernateUtil;
 
 public class AdminLoginService {
@@ -68,6 +69,36 @@ public class AdminLoginService {
 	         session.close();
 	     } 
 		
+		
+		
+		return true;
+	}
+
+	public boolean addCourse(Courses c) {
+		// TODO Auto-generated method stub
+		 Session session = HibernateUtil.openSession();
+			
+			
+		  
+	     Transaction tx = null;
+	     try {
+	         tx = session.getTransaction();
+	         tx.begin();
+	         session.saveOrUpdate(c);       
+	         tx.commit();
+	     } 
+	     
+	     catch (Exception e) {
+	         if (tx != null) {
+	             tx.rollback();
+	         }
+	         e.printStackTrace();
+	     } 
+	    
+	     
+	     finally {
+	         session.close();
+	     } 
 		
 		
 		return true;

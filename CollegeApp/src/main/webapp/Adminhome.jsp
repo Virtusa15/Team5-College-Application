@@ -62,7 +62,7 @@ session.setAttribute("user", user);
 <ul>
   <li><a href="<%=request.getContextPath()%>//ApplicantViewController">Applicationsview</a></li>
   <li><a href="CourseAssign.jsp">CourseAssign</a></li>
-  <li><a href="#contact">PlacementDetails</a></li>
+  <li><a href="ViewCourses">PlacementDetails</a></li>
   <li><a href="#contact">PostEventts</a></li>
   <li><a href="#contact">ViewStudetnts</a></li>
   <li><a href="#contact">ViewFaculty</a></li>
