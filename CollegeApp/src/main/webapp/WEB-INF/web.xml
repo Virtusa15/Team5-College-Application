@@ -65,6 +65,18 @@
   	<description></description>
   	<servlet-class>com.college.web.controller.CourseUpdateController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CourseDeleteController</servlet-name>
+  	<display-name>CourseDeleteController</display-name>
+  	<description></description>
+  	<servlet-class>com.college.web.controller.CourseDeleteController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddPlacementController</servlet-name>
+  	<display-name>AddPlacementController</display-name>
+  	<description></description>
+  	<servlet-class>com.college.web.controller.AddPlacementController</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>ApplicantController</servlet-name>
@@ -106,6 +118,14 @@
   <servlet-mapping>
   	<servlet-name>CourseUpdateController</servlet-name>
   	<url-pattern>/CourseUpdateController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CourseDeleteController</servlet-name>
+  	<url-pattern>/DeleteCourse</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddPlacementController</servlet-name>
+  	<url-pattern>/addPlacement</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

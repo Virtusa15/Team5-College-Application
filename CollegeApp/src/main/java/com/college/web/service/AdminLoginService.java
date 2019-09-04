@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import com.college.web.model.Admin;
 import com.college.web.model.ApplicationStatus;
 import com.college.web.model.Courses;
+import com.college.web.model.PlacementDetails;
 import com.college.web.util.HibernateUtil;
 
 public class AdminLoginService {
@@ -172,5 +173,73 @@ public boolean updateCourse(Courses course) {
 	
 	return true;
 }
+
+public boolean deleteCourse(long cid) {
+	// TODO Auto-generated method stub
+	Session session = HibernateUtil.openSession();
+	
+
+	  
+    Transaction tx = null;
+    try {
+        tx = session.getTransaction();
+        tx.begin();
+    	Courses c=(Courses) session.get(Courses.class,cid);
+    	if(c!=null)
+    	{
+    		
+    		session.delete(c);
+    		System.out.println("course deleted");
+    	}
+        tx.commit();
+    } 
+    
+    catch (Exception e) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        e.printStackTrace();
+    } 
+   
+    
+    finally {
+        session.close();
+    } 
+	
+	
+	return true;
+}
+
+public boolean addPlacement(PlacementDetails p) {
+	 Session session = HibernateUtil.openSession();
+		
+		
+	  
+     Transaction tx = null;
+     try {
+         tx = session.getTransaction();
+         tx.begin();
+         session.saveOrUpdate(p);       
+         tx.commit();
+     } 
+     
+     catch (Exception e) {
+         if (tx != null) {
+             tx.rollback();
+         }
+         e.printStackTrace();
+     } 
+    
+     
+     finally {
+         session.close();
+     } 
+	
+	
+	
+	return true;
+}
+
+
 
 }

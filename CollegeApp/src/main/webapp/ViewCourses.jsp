@@ -82,6 +82,28 @@ List<Courses> courses=al.viewAllCourses();
 
 
 					</td>
+					<td>
+						<form action="DeleteCourse" method="Post">
+
+							<input type="hidden" name="cid"
+								value="<%=dr.getCourseid() %>"> 
+									
+								
+								
+								<input type="submit" value="delete">
+
+
+
+
+
+						</form>
+
+
+
+
+
+					</td>
+					
 
 			
 
