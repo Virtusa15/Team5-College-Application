@@ -1,5 +1,7 @@
 package com.college.web.service;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -84,7 +86,7 @@ public class AdminLoginService {
 	     try {
 	         tx = session.getTransaction();
 	         tx.begin();
-	         session.saveOrUpdate(c);       
+	         session.save(c);       
 	         tx.commit();
 	     } 
 	     
@@ -103,5 +105,72 @@ public class AdminLoginService {
 		
 		return true;
 	}
+	
+	
+public 	List<Courses> viewAllCourses()
+{
+	
+	Session session = HibernateUtil.openSession();
+	List<Courses> course=null;
+	
+	  
+    Transaction tx = null;
+    try {
+        tx = session.getTransaction();
+        tx.begin();
+        course =session.createQuery("from Courses").list();      
+        tx.commit();
+    } 
+    
+    catch (Exception e) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        e.printStackTrace();
+    } 
+   
+    
+    finally {
+        session.close();
+    } 
+	
+	
+
+
+	
+	
+	
+	return course;
+	
+}
+
+public boolean updateCourse(Courses course) {
+	Session session = HibernateUtil.openSession();
+	
+	
+	  
+    Transaction tx = null;
+    try {
+        tx = session.getTransaction();
+        tx.begin();
+        session.update(course);    
+        tx.commit();
+    } 
+    
+    catch (Exception e) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        e.printStackTrace();
+    } 
+   
+    
+    finally {
+        session.close();
+    } 
+	
+	
+	return true;
+}
 
 }
