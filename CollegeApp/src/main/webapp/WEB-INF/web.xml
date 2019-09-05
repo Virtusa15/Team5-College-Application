@@ -77,6 +77,12 @@
   	<description></description>
   	<servlet-class>com.college.web.controller.AddPlacementController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>PlacementDeleteController</servlet-name>
+  	<display-name>PlacementDeleteController</display-name>
+  	<description></description>
+  	<servlet-class>com.college.web.controller.PlacementDeleteController</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>ApplicantController</servlet-name>
@@ -126,6 +132,10 @@
   <servlet-mapping>
   	<servlet-name>AddPlacementController</servlet-name>
   	<url-pattern>/addPlacement</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PlacementDeleteController</servlet-name>
+  	<url-pattern>/deleteplacement</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

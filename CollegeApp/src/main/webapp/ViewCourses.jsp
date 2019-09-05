@@ -21,6 +21,7 @@
 </head>
 <body>
 <%
+response.setIntHeader("Refresh", 1);
 AdminLoginService al=new AdminLoginService();
 List<Courses> courses=al.viewAllCourses();
 %>

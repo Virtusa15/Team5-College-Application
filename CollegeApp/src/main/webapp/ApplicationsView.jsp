@@ -162,7 +162,7 @@ background-color
 
 							<input type="hidden" name="aid"
 								value="<%=dr.getApplication_id()%>"> <input
-								type="hidden" name="cname" value="<%=dr.getFirst_name()%>">
+								type="hidden" name="aname" value="<%=dr.getFirst_name()%>">
 							<input type="hidden" name="status" value="approve"> <input
 								type="submit" value="approve">
 

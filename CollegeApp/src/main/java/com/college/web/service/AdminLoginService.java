@@ -239,7 +239,82 @@ public boolean addPlacement(PlacementDetails p) {
 	
 	return true;
 }
+public List<PlacementDetails> getAllPlacements() {
+	
+	Session session = HibernateUtil.openSession();
+	List<PlacementDetails> placementdetails=null;
+	
+	  
+    Transaction tx = null;
+    try {
+        tx = session.getTransaction();
+        tx.begin();
+        placementdetails =session.createQuery("from PlacementDetails").list();      
+        tx.commit();
+    } 
+    
+    catch (Exception e) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        e.printStackTrace();
+    } 
+   
+    
+    finally {
+        session.close();
+    } 
+	
+	
 
 
+	
+	
+	
+	return placementdetails;
+	
 
 }
+
+public boolean deletePlacement(int sno) {
+	Session session = HibernateUtil.openSession();
+	
+
+	  
+    Transaction tx = null;
+    try {
+        tx = session.getTransaction();
+        tx.begin();
+    	PlacementDetails p=(PlacementDetails) session.get(PlacementDetails.class,sno);
+    	if(p!=null)
+    	{
+    		
+    		session.delete(p);
+    		System.out.println("course deleted");
+    	}
+        tx.commit();
+    } 
+    
+    catch (Exception e) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        e.printStackTrace();
+    } 
+   
+    
+    finally {
+        session.close();
+    } 
+	
+	
+	return true;
+	
+}
+
+	
+}
+
+
+
+
