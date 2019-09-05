@@ -6,39 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>STUDENT REGISTRATION FORM</title>
 <script type="text/javascript">
-function  ShowMtech() {
-       var mba = document.getElementById("Mbavalue");      
-        var mtch = document.getElementById("Mtechvalue");
-  	var Btech = document.getElementById("Btechvalues");
-	  var def=document.getElementById("def");
-	def.style.display="none";
- 	Btech.style.display =  "none";
-      	mtch.style.display = "block";
-	mba.style.display="none";
-}
 
-    function ShowBtech() {
-       var mba = document.getElementById("Mbavalue");
-       var mtch = document.getElementById("Mtechvalue");
-        var Btech = document.getElementById("Btechvalues");
-	  var def=document.getElementById("def");
-	def.style.display="none";
-  	mtch.style.display =  "none";
-        Btech.style.display = "block";
-	mba.style.display="none";
-}
 
-function ShowMba() {
-       var mba = document.getElementById("Mbavalue");
-       var mtch = document.getElementById("Mtechvalue");
-        var Btech = document.getElementById("Btechvalues");
-	  var def=document.getElementById("def");
-	def.style.display="none";
-  	mba.style.display="block";
-	mtch.style.display =  "none";
-        Btech.style.display = "none";
-
-}
 function m1()
 {
  alert("only numbers allowed");
@@ -47,12 +16,33 @@ function m2()
 {
   alert("only characters allowed");
 }
-
-</script>
+        function yourfunction(radioid)
+{
+if(radioid == 1)
+{    
+   	document.getElementById('one').style.display = 'block';
+    document.getElementById('two').style.display = 'none';
+	document.getElementById('three').style.display = 'none';
+ }
+ else if(radioid == 2)
+{  
+	document.getElementById('three').style.display = 'none';
+	document.getElementById('two').style.display = '';
+    document.getElementById('one').style.display = 'none';
+}
+ else if(radioid == 3)
+{  
+	
+	document.getElementById('three').style.display = '';
+	document.getElementById('two').style.display = 'none';
+    document.getElementById('one').style.display = 'none';
+}
+}
+    </script>
 </head>
 <body>
 <h2 align="center">STUDENT REGISTRATION FORM</h2>
-<form action=""> 
+<form action="addStudent" method="get"> 
 <table align="center" cellpadding = "15">
 <!----- First Name ----------------------------------->
 <tr>
@@ -79,7 +69,7 @@ function m2()
 
 <!-------- Student Id-------------->
 <tr>
-<td>STUDENT ID</td>
+<td>EnterApplication ID</td>
 <td><input type="text" name="s_id" maxlength="7" required onclick="m1()">
 </td>
 </tr> 
@@ -215,6 +205,8 @@ title="Must contain at least one number and one uppercase and lowercase letter, 
 <option value="BCOM">Bachelor of Commerce</option>
 <option value="Dip">Diploma</option>
 <option value="inter">Intermediate</option>
+</select>
+</td>
 </tr>
 
 <!--------------Percentage--------------->
@@ -229,9 +221,9 @@ title="Must contain at least one number and one uppercase and lowercase letter, 
 <tr>
 <td>SELECT<br />THE COURSE</td>
 <td>
-<input type="radio" id="course1" name="degree" onclick="ShowBtech()" required />B.Tech/BE
-<input type="radio" id="course2" name="degree" onclick="ShowMtech()" required />M.Tech
-<input type="radio" id="course3" name="degree" onclick="ShowMba()" required />MBA
+<input type="radio"  name="degree"  value="B.Tech/BE" onclick="javascript:return yourfunction(1)"    required />B.Tech/BE
+<input type="radio" name="degree"   value="M.Tech" onclick="javascript:return yourfunction(2)"  required />M.Tech
+<input type="radio" name="degree"   value="MBA" onclick="javascript:return yourfunction(3)"   required />MBA
 </td>
 </tr>
 
@@ -239,10 +231,9 @@ title="Must contain at least one number and one uppercase and lowercase letter, 
 <td>STREAM</td>
 
 <td>
-<select id="def" style"display:block">
-	<option value="-1">Select</option>
-</select>
-<select id="Btechvalues" style="display: none" required>
+<div id="one" style="display: block;"> <br>
+
+<select  name="cvalue"  required>
 	<option value="-1">Select</option>
 	<option value="AERO">Aeronautical Engineering</option>
 	<option value="CIVIL">Civil Engineering</option>
@@ -251,8 +242,10 @@ title="Must contain at least one number and one uppercase and lowercase letter, 
         <option value="EEE">Electrical Electronics Engineering</option>
 	 <option value="IT">Information Technology</option>
         <option value="MECH">Mechanical Engineering</option> 		
-</select>
-<select id="Mtechvalue" style="display: none" required>
+</select><br>
+</div>
+<div id="two" style="display: none;">
+<select  name="cvalue"  required>
 	<option value="-1">Select</option>
         <option value="AERO">Aerospace Engineering</option>
         <option value="CHEM">Chemical Engineering</option>
@@ -263,13 +256,16 @@ title="Must contain at least one number and one uppercase and lowercase letter, 
         <option value="MECH">Mechanical Engineering</option> 
         <option value="MET">Metallurgical Engineering</option>
  </select>
-<select id="Mbavalue" style="display: none" required>
+ </div>
+ <div id="three" style="display:none">
+<select  name="cvalue"   required>
 	<option value="-1">Select</option>
         <option value="HR">Human Resource Management</option>
         <option value="FM">Finance Management</option>
         <option value="MM">Marketing Management</option>
 	 <option value="IT">IT Management</option>
  </select>
+ </div>
 </td>
 </tr>
  
